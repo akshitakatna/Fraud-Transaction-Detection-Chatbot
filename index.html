@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransactionGuard - Fraud Detection System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <h1>TransactionGuard</h1>
+            </div>
+            <p class="tagline">Advanced Fraud Detection System</p>
+        </header>
+
+        <main>
+            <div class="dashboard">
+                <div class="card transaction-form">
+                    <h2>Submit Transaction Details</h2>
+                    <form id="transactionForm">
+                        <div class="form-group">
+                            <label for="amount">Transaction Amount ($)</label>
+                            <input type="number" id="amount" name="amount" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="City, Country" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="datetime">Date & Time</label>
+                            <input type="datetime-local" id="datetime" name="datetime" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Notification Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="card">Card Number (Last 4 digits)</label>
+                            <input type="text" id="card" name="card" pattern="[0-9]{4}" maxlength="4" placeholder="1234" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Transaction Description</label>
+                            <input type="text" id="description" name="description" placeholder="E.g., Online Purchase, Cash Withdrawal" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search-dollar"></i> Analyze Transaction
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card result-card">
+                    <h2>Analysis Results</h2>
+                    <div id="loader" class="hidden">
+                        <div class="spinner"></div>
+                        <p>Analyzing transaction...</p>
+                    </div>
+                    <div id="resultContainer" class="hidden">
+                        <div id="resultIcon"></div>
+                        <h3 id="resultTitle"></h3>
+                        <p id="resultMessage"></p>
+                        <div id="resultDetails"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transaction-history">
+                <div class="card">
+                    <h2>Recent Transactions</h2>
+                    <div class="history-list" id="transactionHistory">
+                        <p class="empty-state">No recent transactions</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="notificationPopup" class="notification hidden">
+            <div class="notification-content">
+                <span class="notification-icon"></span>
+                <span class="notification-message"></span>
+                <span class="close-notification">&times;</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 TransactionGuard. All rights reserved.</p>
+        </footer>
+    </div>
+
+<!-- Add this in your HTML before your script.js -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "_lPdTxapYY4eceSQm",
+      });
+   })();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
