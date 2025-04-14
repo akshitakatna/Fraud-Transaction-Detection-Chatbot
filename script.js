@@ -25,8 +25,8 @@ const GEMINI_API_KEY = "AIzaSyC4_1A7CLGb1PIuRb2eD0hpMTRSCSnJ8eY";
 //   (The user enters their email address to receive notifications)
 // - YOUR_SERVICE_ID: Get this from EmailJS dashboard after connecting your email provider
 // - YOUR_TEMPLATE_ID: Get this from EmailJS dashboard after creating an email template
-const EMAILJS_SERVICE_ID = "service_y1lg449"; // e.g., "service_abcd123"
-const EMAILJS_TEMPLATE_ID = "template_oxdsvlv"; // e.g., "template_xyz789"
+const EMAILJS_SERVICE_ID = "service_mjd4h39"; // e.g., "service_abcd123"
+const EMAILJS_TEMPLATE_ID = "template_bh6kg3z"; // e.g., "template_xyz789"
 // --------------------------
 
 // DOM Elements
